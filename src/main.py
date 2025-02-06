@@ -17,7 +17,8 @@ def main():
             print("Please enter a valid number.")
             continue
         
-        context.get_remainder(binary_number)
+        print("Remainder: ", context.get_remainder(binary_number))
+
         context.set_state(S0())
  
     

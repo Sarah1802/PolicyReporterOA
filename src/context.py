@@ -29,7 +29,6 @@ class Context:
             state (State): The new state to transition to.
         """
         self.state = state
-        print(state)
 
     def transitionState(self, bit):
         """
