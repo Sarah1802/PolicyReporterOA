@@ -5,7 +5,7 @@ from src.states import S0, S1, S2
 from src.binary_input_validator import BinaryInputValidator
 
 
-class TestStateMachine(unittest.TestCase):
+class TestValidator(unittest.TestCase):
 
     def test_invalid_input(self):       
         user_input = "   "

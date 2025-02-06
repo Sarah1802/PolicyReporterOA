@@ -5,7 +5,7 @@ from src.states import S0, S1, S2
 from src.binary_input_validator import BinaryInputValidator
 
 
-class TestStateMachine(unittest.TestCase):
+class TestStates(unittest.TestCase):
 
     def setUp(self):
         """Set up the test case with a fresh Context."""
