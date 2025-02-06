@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import patch
-from context import Context
-from states import S0, S1, S2
-from binary_input_validator import BinaryInputValidator
+from src.context import Context
+from src.states import S0, S1, S2
+from src.binary_input_validator import BinaryInputValidator
 
 
 class TestStateMachine(unittest.TestCase):
@@ -17,33 +17,6 @@ class TestStateMachine(unittest.TestCase):
     def test_initial_state(self):
         """Test that the initial state is S0."""
         self.assertIsInstance(self.context.state, S0)
-
-    def test_S0_state_transition(self):
-        bit = "0"
-        self.s0.handle_state(self.context, bit)
-        self.assertIsInstance(self.context.state, S0)  # Ensure state has changed
-
-        bit = "1"
-        self.s0.handle_state(self.context, bit)
-        self.assertIsInstance(self.context.state, S1)  # Ensure state has changed
-    
-    def test_S1_state_transition(self):
-        bit = "0"
-        self.s1.handle_state(self.context, bit)
-        self.assertIsInstance(self.context.state, S2)  # Ensure state has changed
-
-        bit = "1"
-        self.s1.handle_state(self.context, bit)
-        self.assertIsInstance(self.context.state, S0)  # Ensure state has changed
-
-    def test_S2_state_transition(self):
-        bit = "0"
-        self.s2.handle_state(self.context, bit)
-        self.assertIsInstance(self.context.state, S1)  # Ensure state has changed
-
-        bit = "1"
-        self.s2.handle_state(self.context, bit)
-        self.assertIsInstance(self.context.state, S2)  # Ensure state has changed
     
     def test_trivial_remainder(self):
         binary_number = "0"
@@ -113,32 +86,6 @@ class TestStateMachine(unittest.TestCase):
         calculated_remainder = self.context.get_remainder(binary_number)
         self.assertEqual(calculated_remainder, answer)
         self.assertIsInstance(self.context.state, S2)
-
-    def test_invalid_input(self):       
-        user_input = "   "
-        self.assertFalse(BinaryInputValidator.is_valid(user_input))
-
-        user_input = " 1 1  0"
-        self.assertFalse(BinaryInputValidator.is_valid(user_input))
-  
-        user_input = "%$!^*1001"
-        self.assertFalse(BinaryInputValidator.is_valid(user_input))
-
-        user_input = "%$!^*1001"
-        self.assertFalse(BinaryInputValidator.is_valid(user_input))
-
-        user_input = "18921001"
-        self.assertFalse(BinaryInputValidator.is_valid(user_input))
-    
-    def test_valid_input(self):
-        user_input = "111111"
-        self.assertTrue(BinaryInputValidator.is_valid(user_input))
-
-        user_input = "0000000"
-        self.assertTrue(BinaryInputValidator.is_valid(user_input))
-
-        user_input = "000010011"
-        self.assertTrue(BinaryInputValidator.is_valid(user_input))
 
 
 

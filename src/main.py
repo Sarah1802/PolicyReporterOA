@@ -1,6 +1,6 @@
-from context import Context
-from states import S0
-from binary_input_validator import BinaryInputValidator
+from src.context import Context
+from src.states import S0
+from src.binary_input_validator import BinaryInputValidator
 
 
 def main():
