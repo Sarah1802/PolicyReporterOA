@@ -7,15 +7,18 @@ The goal is to take a string of ones and zeroes representing an unsigned binary 
 The FSM takes in characters from the input string, starting at the most significant bit and transitions between the states S0, S1, S2 depending on the character. The remainder returned by the FSM is determined by the final state after all characters have been processed.
 
 <img width="685" alt="image" src="https://github.com/user-attachments/assets/4b1cc72b-05c3-4535-bb9f-7912b45c710b" />
-
+<br>
 The table below indicates the remainder returned for each state.
+<br>
 <img width="351" alt="image" src="https://github.com/user-attachments/assets/a811b58f-5583-4095-b73c-0bee5aab6cc8" />
 
 
 ### Example
+<br>
 For the input string "010" (binary representation of 2", the machine will operate as follows:
+<br>
 <img width="317" alt="image" src="https://github.com/user-attachments/assets/a03395d2-b676-43c6-9608-abd17876c0ee" />
-
+<br>
 Since the final state is S2, the remainder will be 2.
 
 ### Implementation
