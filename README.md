@@ -27,6 +27,7 @@ The Context class manages the current state and handles transitions based on the
 
 ## Running the Program
 - Before attempting to run any commands in the terminal, please install the latest version of python on your device. The download link can be found [here](https://www.python.org/downloads/)
+- Clone this repository to your local device
 - To start the program, ensure you are in the **root folder** and run the following command in the terminal:
 
 ```
