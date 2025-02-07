@@ -18,6 +18,10 @@ For the input string "010" (binary representation of 2", the machine will operat
 
 Since the final state is S2, the remainder will be 2.
 
+### Implementation
+The Context class manages the current state and handles transitions based on the input bits (0 or 1) by calling the transition protocol of its current state. The abstract class state acts as an interface for the concrete classes. Each concrete state class (S0, S1, S2) implements state-specific behavior, transitioning to another state and containing the remainder in a class variable. By using the state design pattern, logic is encapsulated within separate classes, making the FSM easily extensible and maintainable.
+
+
 ## Running the Program
 - Before attempting to run any commands in the terminal, please install the latest version of python on your device. The download link can be found [here](https://www.python.org/downloads/)
 - To start the program, ensure you are in the **root folder** and run the following command in the terminal:
